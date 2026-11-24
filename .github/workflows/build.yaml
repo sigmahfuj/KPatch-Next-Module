@@ -32,7 +32,7 @@ jobs:
       run: |
         mkdir -p module/bin
         TAG="${{ env['kpatch-next'] }}"
-        ARGS=("-R" "KernelSU-Next/KPatch-Next" "-p" "kpatch-android" "-p" "kptools-android" "-p" "kpimg-linux" "-D" "module/bin")
+        ARGS=("-R" "sigmahfuj/KPatch-Next" "-p" "kpatch-android" "-p" "kptools-android" "-p" "kpimg-linux" "-D" "module/bin")
         if [ "$TAG" != "latest" ]; then
           gh release download "$TAG" "${ARGS[@]}"
         else
