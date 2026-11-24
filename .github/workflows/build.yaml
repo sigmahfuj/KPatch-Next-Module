@@ -32,7 +32,7 @@ jobs:
       run: |
         mkdir -p module/bin
         TAG="${{ env['kpatch-next'] }}"
-        ARGS=("-R" "sigmahfuj/KPatch-Next" "-p" "kpatch-android" "-p" "kptools-android" "-p" "kpimg-linux" "-D" "module/bin")
+        ARGS=("-R" "KernelSU-Next/KPatch-Next" "-p" "kpatch-android" "-p" "kptools-android" "-p" "kpimg-linux" "-D" "module/bin")
         if [ "$TAG" != "latest" ]; then
           gh release download "$TAG" "${ARGS[@]}"
         else
@@ -57,7 +57,7 @@ jobs:
     - name: Setup pnpm
       uses: pnpm/action-setup@v4
       with:
-        version: 'latest'
+        package_json_file: webui/package.json
 
     - name: Setup Node
       uses: actions/setup-node@v4
